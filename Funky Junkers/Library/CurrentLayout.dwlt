@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,8 +42,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 1067
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 683, y: 342}
+  m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
   controlID: 9
 --- !u!114 &3
@@ -89,8 +89,8 @@ MonoBehaviour:
     y: 0
     width: 379
     height: 645
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -114,13 +114,13 @@ MonoBehaviour:
     y: 645
     width: 1531
     height: 422
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 13}
   - {fileID: 18}
-  m_Selected: 0
+  m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -206,8 +206,8 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 1067
-  m_MinSize: {x: 406, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 406, y: 342}
+  m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
   controlID: 10
 --- !u!114 &10
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Kiathlin\Documents\Funky Junkers
+  m_LastProjectPath: C:\Users\Kiathlin\github\Funky Junkers
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
@@ -389,9 +389,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 1ee0ffff
+    m_LastClickedInstanceID: -8162
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -480,9 +480,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: e4fbffff00000000
+    m_SelectedIDs: f062fcff
+    m_LastClickedID: -236816
+    m_ExpandedIDs: f062fcff40e7fdff90effdffdcfbfdff1ee0fffff2f8ffffe4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -537,9 +537,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.9788003, y: -2.7674704, z: 2.6552818}
+    m_Target: {x: -7.6343975, y: -5.1677966, z: -2.756845}
     speed: 2
-    m_Value: {x: -2.9788003, y: -2.7674704, z: 2.6552818}
+    m_Value: {x: -7.6343975, y: -5.1677966, z: -2.756845}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -567,13 +567,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.3017204, y: 0.45737258, z: -0.16841243, w: -0.8193976}
+    m_Target: {x: -0.19825785, y: 0.7531953, z: -0.26204494, w: -0.56984496}
     speed: 2
-    m_Value: {x: -0.3017204, y: 0.45737258, z: -0.16841243, w: -0.8193976}
+    m_Value: {x: -0.19825785, y: 0.7531953, z: -0.26204494, w: -0.56984496}
   m_Size:
-    m_Target: 6.973017
+    m_Target: 17.216421
     speed: 2
-    m_Value: 6.973017
+    m_Value: 17.216421
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -684,8 +684,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 718
-    width: 1366
-    height: 308
+    x: 0
+    y: 737
+    width: 1529
+    height: 401
   m_PersistentViewDataDictionary: {fileID: 0}
