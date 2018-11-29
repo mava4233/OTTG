@@ -54,6 +54,6 @@ public class Movement : MonoBehaviour {
 			anchorPivot.transform.Rotate(new Vector3(0, -anchorRotSpeed, 0), Space.World);
 		}
 
-		cam.transform.SetPositionAndRotation(new Vector3(ship.transform.position.x,6,ship.transform.position.z), cam.transform.rotation);
+		cam.transform.SetPositionAndRotation(new Vector3(ship.transform.position.x,6,ship.transform.position.z - 1.8f), cam.transform.rotation);
 	}
 }
