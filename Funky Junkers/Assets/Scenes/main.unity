@@ -206,6 +206,7 @@ MonoBehaviour:
   cam: {fileID: 1515003145}
   ship: {fileID: 166827042}
   anchorPivot: {fileID: 1239796311}
+  anchoredObject: {fileID: 1104183380}
 --- !u!54 &166827045
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -252,7 +253,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9b5534bf87813dc429f9d720ed74be05, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5
+      value: -0.553
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9b5534bf87813dc429f9d720ed74be05, type: 3}
       propertyPath: m_LocalRotation.x

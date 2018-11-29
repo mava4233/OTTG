@@ -27,30 +27,46 @@ public class Movement : MonoBehaviour {
 	public Camera cam;
 	public GameObject ship;
 	public GameObject anchorPivot;
+	public GameObject anchoredObject;
 
 	// Use this for initialization
 	void Start () {
-		
+		if(anchoredObject != null) {
+			anchoredObject.transform.parent = anchorPivot.transform;
+		}
 	}
 	
 	// FixedUpdate is called when physics updates
 	void FixedUpdate() {
 		if(Input.GetKey(upKey) || Input.GetKey(altUpKey)) {
 			ship.transform.Translate(ship.transform.forward*shipSpeed, Space.World);
-		} else if(Input.GetKey(downKey) || Input.GetKey(altDownKey)) {
+		} /*else if(Input.GetKey(downKey) || Input.GetKey(altDownKey)) {
 			ship.transform.Translate(-ship.transform.forward*shipSpeed, Space.World);
-		}
+		}*/
 		if(Input.GetKey(rightKey) || Input.GetKey(altRightKey)) {
 			ship.transform.Rotate(new Vector3(0,1,0)*shipRotSpeed, Space.World);
 		} else if(Input.GetKey(leftKey) || Input.GetKey(altLeftKey)) {
 			ship.transform.Rotate(new Vector3(0,1,0)*-shipRotSpeed, Space.World);
 		}
-		if(Input.GetKey(pivotRight) || Input.GetKey(altPivotRight)) {
+		/* if(Input.GetKey(pivotRight) || Input.GetKey(altPivotRight)) {
 			anchorPivot.transform.Rotate(new Vector3(0, anchorRotSpeed, 0), Space.World);
 		} else if(Input.GetKey(pivotLeft) || Input.GetKey(altPivotLeft)) {
 			anchorPivot.transform.Rotate(new Vector3(0, -anchorRotSpeed, 0), Space.World);
-		}
+		}*/
+
+		Vector3 positionOnScreen = cam.WorldToViewportPoint(anchorPivot.transform.position);
+		Vector3 mouseOnScreen = cam.ScreenToViewportPoint(Input.mousePosition);
+		Vector2 positOnS = new Vector2(positionOnScreen.x, positionOnScreen.z);
+		Vector2 mouseOnS = new Vector2(mouseOnScreen.x, mouseOnScreen.z);
+
+		float angle = AngleBetweenTwoPoints(positOnS, mouseOnS);
+
+		anchorPivot.transform.rotation = Quaternion.Euler(new Vector3(0f, angle, 0f));
 
 		cam.transform.SetPositionAndRotation(new Vector3(ship.transform.position.x,6,ship.transform.position.z-1.8f), cam.transform.rotation);
+	}
+
+	private float AngleBetweenTwoPoints(Vector2 pos, Vector2 mouse) {
+		return Mathf.Atan2(pos.y - mouse.y, pos.x - mouse.x) * Mathf.Rad2Deg;
 	}
 }
