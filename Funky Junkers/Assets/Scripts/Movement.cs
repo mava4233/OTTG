@@ -48,25 +48,17 @@ public class Movement : MonoBehaviour {
 		} else if(Input.GetKey(leftKey) || Input.GetKey(altLeftKey)) {
 			ship.transform.Rotate(new Vector3(0,1,0)*-shipRotSpeed, Space.World);
 		}
-		/* if(Input.GetKey(pivotRight) || Input.GetKey(altPivotRight)) {
+		/*if(Input.GetKey(pivotRight) || Input.GetKey(altPivotRight)) {
 			anchorPivot.transform.Rotate(new Vector3(0, anchorRotSpeed, 0), Space.World);
 		} else if(Input.GetKey(pivotLeft) || Input.GetKey(altPivotLeft)) {
 			anchorPivot.transform.Rotate(new Vector3(0, -anchorRotSpeed, 0), Space.World);
 		}*/
 
-		Vector3 positionOnScreen = cam.WorldToViewportPoint(anchorPivot.transform.position);
-		Vector3 mouseOnScreen = cam.ScreenToViewportPoint(Input.mousePosition);
-		Vector2 positOnS = new Vector2(positionOnScreen.x, positionOnScreen.z);
-		Vector2 mouseOnS = new Vector2(mouseOnScreen.x, mouseOnScreen.z);
+		Vector3 aimpos = cam.ScreenToWorldPoint(Input.mousePosition);
+		aimpos.z = 0;
 
-		float angle = AngleBetweenTwoPoints(positOnS, mouseOnS);
+		anchorPivot.transform.LookAt(aimpos);
 
-		anchorPivot.transform.rotation = Quaternion.Euler(new Vector3(0f, angle, 0f));
-
-		cam.transform.SetPositionAndRotation(new Vector3(ship.transform.position.x,6,ship.transform.position.z-1.8f), cam.transform.rotation);
-	}
-
-	private float AngleBetweenTwoPoints(Vector2 pos, Vector2 mouse) {
-		return Mathf.Atan2(pos.y - mouse.y, pos.x - mouse.x) * Mathf.Rad2Deg;
+		cam.transform.SetPositionAndRotation(new Vector3(ship.transform.position.x,6,ship.transform.position.z), cam.transform.rotation);
 	}
 }
