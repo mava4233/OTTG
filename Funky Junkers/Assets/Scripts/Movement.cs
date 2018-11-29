@@ -15,10 +15,7 @@ public class Movement : MonoBehaviour {
 	public KeyCode altLeftKey = KeyCode.LeftArrow;
 
 	[Header("Ship Variables")]
-	public float shipSpeed = 2f;
-	/*public float curShipSpeed = 0f;
-	public float shipAcceleration = 0.004f;
-	public float maxShipSpeed = 4f;*/
+	public float shipSpeed = 0.2f;
 	public float shipRotSpeed = 2f;
 
 	[Header("Object References")]
@@ -34,7 +31,14 @@ public class Movement : MonoBehaviour {
 	// FixedUpdate is called when physics updates
 	void FixedUpdate() {
 		if(Input.GetKey(upKey) || Input.GetKey(altUpKey)) {
-			
+			ship.transform.Translate(ship.transform.forward*shipSpeed, Space.World);
+		} else if(Input.GetKey(downKey) || Input.GetKey(altDownKey)) {
+			ship.transform.Translate(-ship.transform.forward*shipSpeed, Space.World);
+		}
+		if(Input.GetKey(rightKey) || Input.GetKey(altRightKey)) {
+			ship.transform.Rotate(new Vector3(0,1,0)*shipRotSpeed, Space.World);
+		} else if(Input.GetKey(leftKey) || Input.GetKey(altLeftKey)) {
+			ship.transform.Rotate(new Vector3(0,1,0)*-shipRotSpeed, Space.World);
 		}
 	}
 }

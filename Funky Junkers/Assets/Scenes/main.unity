@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -126,7 +126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2e9708fa97667f647b06c67f0f3d3b93, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.69
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2e9708fa97667f647b06c67f0f3d3b93, type: 3}
       propertyPath: m_LocalPosition.z
@@ -196,11 +196,40 @@ MonoBehaviour:
   altRightKey: 275
   leftKey: 97
   altLeftKey: 276
-  shipSpeed: 2
+  shipSpeed: 0.02
   shipRotSpeed: 2
   cam: {fileID: 1515003145}
   ship: {fileID: 166827042}
   anchorPivot: {fileID: 1239796311}
+--- !u!54 &166827045
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 166827042}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &166827046
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 166827042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 2e9708fa97667f647b06c67f0f3d3b93, type: 3}
 --- !u!1001 &227788054
 Prefab:
   m_ObjectHideFlags: 0
@@ -214,7 +243,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9b5534bf87813dc429f9d720ed74be05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.69
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9b5534bf87813dc429f9d720ed74be05, type: 3}
       propertyPath: m_LocalPosition.z
@@ -389,6 +418,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1104183380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 9b5534bf87813dc429f9d720ed74be05,
+    type: 3}
+  m_PrefabInternal: {fileID: 227788054}
+--- !u!54 &1104183384
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104183380}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1104183385
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104183380}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 9b5534bf87813dc429f9d720ed74be05, type: 3}
 --- !u!1 &1119528124
 GameObject:
   m_ObjectHideFlags: 0
