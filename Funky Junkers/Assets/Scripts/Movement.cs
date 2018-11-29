@@ -48,10 +48,20 @@ public class Movement : MonoBehaviour {
 		} else if(Input.GetKey(leftKey) || Input.GetKey(altLeftKey)) {
 			ship.transform.Rotate(new Vector3(0,1,0)*-shipRotSpeed, Space.World);
 		}
-		if(Input.GetKey(pivotRight) || Input.GetKey(altPivotRight)) {
+		/*if(Input.GetKey(pivotRight) || Input.GetKey(altPivotRight)) {
 			anchorPivot.transform.Rotate(new Vector3(0, anchorRotSpeed, 0), Space.World);
 		} else if(Input.GetKey(pivotLeft) || Input.GetKey(altPivotLeft)) {
 			anchorPivot.transform.Rotate(new Vector3(0, -anchorRotSpeed, 0), Space.World);
+		}*/
+		if(Input.GetMouseButtonDown(1)) {
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+		} else if(Input.GetMouseButtonUp(1)) {
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+		}
+		if(Input.GetMouseButton(1)) {
+			anchorPivot.transform.Rotate(new Vector3(0f,1f,0f)*(shipRotSpeed*Input.GetAxis("Mouse X")), Space.World);
 		}
 
 		cam.transform.SetPositionAndRotation(new Vector3(ship.transform.position.x,6,ship.transform.position.z - 1.8f), cam.transform.rotation);
