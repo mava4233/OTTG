@@ -48,16 +48,11 @@ public class Movement : MonoBehaviour {
 		} else if(Input.GetKey(leftKey) || Input.GetKey(altLeftKey)) {
 			ship.transform.Rotate(new Vector3(0,1,0)*-shipRotSpeed, Space.World);
 		}
-		/*if(Input.GetKey(pivotRight) || Input.GetKey(altPivotRight)) {
+		if(Input.GetKey(pivotRight) || Input.GetKey(altPivotRight)) {
 			anchorPivot.transform.Rotate(new Vector3(0, anchorRotSpeed, 0), Space.World);
 		} else if(Input.GetKey(pivotLeft) || Input.GetKey(altPivotLeft)) {
 			anchorPivot.transform.Rotate(new Vector3(0, -anchorRotSpeed, 0), Space.World);
-		}*/
-
-		Vector3 aimpos = cam.ScreenToWorldPoint(Input.mousePosition);
-		aimpos.z = 0;
-
-		anchorPivot.transform.LookAt(aimpos);
+		}
 
 		cam.transform.SetPositionAndRotation(new Vector3(ship.transform.position.x,6,ship.transform.position.z), cam.transform.rotation);
 	}
