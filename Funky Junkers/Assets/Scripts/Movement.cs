@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-	[HeaderAttribute("Controls")]
+	[Header("Controls")]
 	public KeyCode upKey = KeyCode.W;
 	public KeyCode altUpKey = KeyCode.UpArrow;
 	public KeyCode downKey = KeyCode.S;
@@ -13,10 +13,15 @@ public class Movement : MonoBehaviour {
 	public KeyCode altRightKey = KeyCode.RightArrow;
 	public KeyCode leftKey = KeyCode.A;
 	public KeyCode altLeftKey = KeyCode.LeftArrow;
+	public KeyCode pivotRight = KeyCode.E;
+	public KeyCode altPivotRight = KeyCode.Keypad0;
+	public KeyCode pivotLeft = KeyCode.Q;
+	public KeyCode altPivotLeft = KeyCode.RightControl;
 
 	[Header("Ship Variables")]
 	public float shipSpeed = 0.2f;
 	public float shipRotSpeed = 2f;
+	public float anchorRotSpeed = 2f;
 
 	[Header("Object References")]
 	public Camera cam;
@@ -40,5 +45,12 @@ public class Movement : MonoBehaviour {
 		} else if(Input.GetKey(leftKey) || Input.GetKey(altLeftKey)) {
 			ship.transform.Rotate(new Vector3(0,1,0)*-shipRotSpeed, Space.World);
 		}
+		if(Input.GetKey(pivotRight) || Input.GetKey(altPivotRight)) {
+			anchorPivot.transform.Rotate(new Vector3(0, anchorRotSpeed, 0), Space.World);
+		} else if(Input.GetKey(pivotLeft) || Input.GetKey(altPivotLeft)) {
+			anchorPivot.transform.Rotate(new Vector3(0, -anchorRotSpeed, 0), Space.World);
+		}
+
+		cam.transform.SetPositionAndRotation(new Vector3(ship.transform.position.x,6,ship.transform.position.z-1.8f), cam.transform.rotation);
 	}
 }
